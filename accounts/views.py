@@ -17,7 +17,8 @@ def register(request):
                 messages.info(request, 'username taken')
                 return redirect('register')
             elif User.objects.filter(email=email).exists():
-                print('email already exists')
+                messages.info(request, 'email already exists')
+                return redirect('register')
             else:
                 user = User.objects.create_user(username=username, password=password1, email=email,
                                                 first_name=first_name, last_name=last_name)
@@ -25,7 +26,8 @@ def register(request):
                 print('user created')
                 return redirect('login')
         else:
-            print('user not created')
+            messages.info(request, 'Registration Failed')
+            return redirect('register')
 
     else:
         return render(request, 'register.html')
@@ -40,7 +42,7 @@ def login(request):
             auth.login(request, user)
             return redirect("/")
         else:
-            messages.info(request, 'user dont exist')
+            messages.info(request, 'Login failed')
             return redirect('login')
 
     else:

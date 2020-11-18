@@ -1,29 +1,88 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fashion Club Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- css -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" media="all" />
+    <!--// css -->
+    <!-- font -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- //font -->
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 </head>
 
-<body bgcolor="cyan">
+<body>
+    <div class="header-top-w3layouts">
+        <div class="container">
+            <div class="col-md-6 logo-w3">
+                <a href="index.html"><img src="{% static 'images/logo2.png' %}" alt=" " />
+                    <h1>FASHION<span>CLUB</span></h1>
+                </a>
+            </div>
+            <div class="col-md-6 phone-w3l">
+                <ul>
+                    <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
+                    <li>+18045403380</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
 
-    {% block content %}
+    <div class="login">
 
-    {% endblock %}
-    <form action="login" method="POST">
-        {% csrf_token %}
+        <div class="main-agileits">
+            <div class="form-w3agile">
+                <h3>Login</h3>
+                <form action="login" method="post">
+                    {% csrf_token %}
 
-       
-        <input type="text" name="username" placeholder="username"><br>
-        
-        <input type="password" name="password" placeholder="password"><br>
-        
-        <input type="submit">
-       
-    </form>
+                    <div class="key">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="username" required="" placeholder="username">
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="key">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" name="password" required="" placeholder="Password">
+                        <div class="clearfix"></div>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <div class="forg">
+                <a href="register" class="forg-right">Register</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
     <div>
         {% for message in messages %}
         <h3> {{message}} </h3>

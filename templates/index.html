@@ -1,531 +1,499 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Travello</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Travello template project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
-<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+    <title>CollegeKart</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fashion Club Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- css -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" media="all" />
+
+    <!--// css -->
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel='stylesheet' type='text/css'>
+    <!-- //font -->
+    <script src=" {% static 'js/jquery-1.11.1.min.js' %} "></script>
+    <script src="{% static 'js/bootstrap.js' %} "></script>
 </head>
+
 <body>
+    <div class="header-top-w3layouts">
+        <div class="container">
+            <div class="col-md-6 logo-w3">
+                <a href="\"><img src="{% static 'images/logo2.png' %}" alt=" " />
+                    <h1>COLLEGE<span>KART</span></h1>
+                </a>
+            </div>
+            <div class="col-md-6 phone-w3l">
+                <ul>
+                    <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
+                    <li>+18045403380</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="header-bottom-w3ls ">
+        <div class="container ">
+            <div class="col-md-7 navigation-agileits ">
+                <nav class="navbar navbar-default ">
+                    <div class="navbar-header nav_2 ">
+                        <button type="button " class="navbar-toggle collapsed navbar-toggle1 " data-toggle="collapse " data-target="#bs-megadropdown-tabs ">
+						<span class="sr-only ">Toggle navigation</span>
+						<span class="icon-bar "></span>
+						<span class="icon-bar "></span>
+						<span class="icon-bar "></span>
+					</button>
+                    </div>
+                    <div class="collapse navbar-collapse " id="bs-megadropdown-tabs ">
+                        <ul class="nav navbar-nav ">
+                            <li class=" active "><a href="index.html " class="hyper "><span>Home</span></a></li>
+                            <li class="dropdown ">
+                                <a href="# " class="dropdown-toggle hyper " data-toggle="dropdown "><span>Categories<b class="caret "></b></span></a>
+                                <ul class="dropdown-menu multi ">
+                                    <div class="row ">
+                                        <div class="col-sm-4 ">
+                                            <ul class="multi-column-dropdown ">
 
-<div class="super_container">
-	
-	<!-- Header -->
+                                                <li><a href="mobile"><i class="fa fa-angle-right " aria-hidden="true "></i>Mobile Phones</a></li>
+                                                <li><a href="ed"><i class="fa fa-angle-right " aria-hidden="true "></i>ED kit</a></li>
+                                                <li>
+                                                    <a href="electronic"> <i class="fa fa-angle-right " aria-hidden="true "></i>Electronic appliances</a>
+                                                </li>
+                                                <li><a href="vehicle"><i class="fa fa-angle-right " aria-hidden="true "></i>Vehicle</a></li>
+                                                <li><a href="laptop"><i class="fa fa-angle-right " aria-hidden="true "></i>Laptops</a></li>
+                                            </ul>
 
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-							<div class="logo"><a href="index.html">Travello</a></div>
-							<nav class="main_nav">
-								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									{% if user.is_authenticated %}
-									<li>hello, {{user.first_name}}</li>
-									<li><a href="accounts/logout">logout</a></li>
-									{% else %}
-									<li><a href="accounts/register">Register</a></li>
-									<li><a href="accounts/login">login</a></li>
-									{% endif %}
-								</ul>
-							</nav>
-							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+                                        </div>
+                                        <div class="col-sm-4 ">
+                                            <ul class="multi-column-dropdown ">
+                                                <li><a href="stationery"><i class="fa fa-angle-right " aria-hidden="true "></i>Stationery</a></li>
+                                                <li><a href="apron"><i class="fa fa-angle-right " aria-hidden="true "></i>Apron</a></li>
+                                                <li><a href="books"><i class="fa fa-angle-right " aria-hidden="true "></i>Books</a></li>
+                                                <li><a href="coolar"><i class="fa fa-angle-right " aria-hidden="true "></i>Coolar</a></li>
+                                                <li><a href="others"><i class="fa fa-angle-right " aria-hidden="true "></i>Others</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-4 w3l ">
+                                            <a href="#"><img src="{% static 'images/menu1.jpg' %} " class="img-responsive " alt=" "></a>
+                                        </div>
+                                        <div class="clearfix "></div>
+                                    </div>
+                                </ul>
+                            </li>
+                            {% if user.is_authenticated %}
 
-							<!-- Hamburger -->
+                            <li><a href="sell" class="hyper "><span>Sell</span></a></li>
+                            <li><a href="accounts/logout" class="hyper "><span>LogOut</span></a></li>
+                            {% else %}
 
-							<div class="hamburger ml-auto">
-								<i class="fa fa-bars" aria-hidden="false"></i>
-							</div>
+                            <li><a href="accounts/register" class="hyper "><span>Register</span></a></li>
+                            <li><a href="accounts/login" class="hyper "><span>Login</span></a></li>
+                            {% endif %}
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="header_social d-flex flex-row align-items-center justify-content-start">
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-	</header>
+                            <li><a href="about.html " class="hyper "><span>About</span></a></li>
+                            <li><a href="contact.html " class="hyper "><span>Contact Us</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $(".dropdown ").hover(
+                        function() {
+                            $('.dropdown-menu', this).stop(true, true).slideDown("fast ");
+                            $(this).toggleClass('open');
+                        },
+                        function() {
+                            $('.dropdown-menu', this).stop(true, true).slideUp("fast ");
+                            $(this).toggleClass('open');
+                        }
+                    );
+                });
+            </script>
+            <div class="col-md-4 search-agileinfo">
+                <form action="#" method="post">
+                    <input type="search" name="Search" placeholder="Search for a Product..." required="">
+                    <button type="submit" class="btn btn-default search" aria-label="Left Align">
+						<i class="fa fa-search" aria-hidden="true"> </i>
+					</button>
+                </form>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="col-md-1 cart-wthree">
+                <div class="cart">
+                    <form action="#" method="post" class="last">
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="display" value="1" />
+                        <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="banner-agile ">
+        <div class="container ">
+            <h2>WELCOME TO</h2>
+            <h3>COLLEGE<span>KART</span></h3>
+            <p>Suspendisse sed tellus id libero pretium interdum. Suspendisse potenti. Quisque consectetur elit sit amet vehicula tristique. </p>
+            <a href="about.html ">Read More</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
 
-	<!-- Menu -->
+                <div class="section_title w3-padding-16">
+                    <h2>CATEGORIES</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Categories ---------------------------------------------------------------->
 
-	<div class="menu">
-		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
-			<div class="menu_logo"><a href="index.html">Travello</a></div>
-			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
-		</div>
-		<div class="menu_content">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="accounts/register">Register</a></li>
-			</ul>
-		</div>
-		<div class="menu_social">
-			<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-	</div>
-	
-	<!-- Home -->
-
-	<div class="home">
-		
-		<!-- Home Slider -->
-		<div class="home_slider_container">
-			<div class="owl-carousel owl-theme home_slider">
-				
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
-					<div class="home_slider_content_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_slider_content">
-										<div class="home_title"><h2>Let us take you away</h2></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
-					<div class="home_slider_content_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_slider_content">
-										<div class="home_title"><h2>Let us take you away</h2></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
-					<div class="home_slider_content_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_slider_content">
-										<div class="home_title"><h2>Let us take you away</h2></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="home_page_nav">
-				<ul class="d-flex flex-column align-items-end justify-content-end">
-					<li><a href="#" data-scroll-to="#destinations">Offers<span>01</span></a></li>
-					<li><a href="#" data-scroll-to="#testimonials">Testimonials<span>02</span></a></li>
-					<li><a href="#" data-scroll-to="#news">Latest<span>03</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<!-- Search -->
-
-	<div class="home_search">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_search_container">
-						<div class="home_search_title">Search for your trip</div>
-						<div class="home_search_content">
-							<form action="#" class="home_search_form" id="home_search_form">
-								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="City" required="required">
-									<input type="text" class="search_input search_input_2" placeholder="Departure" required="required">
-									<input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">
-									<input type="text" class="search_input search_input_4" placeholder="Budget" required="required">
-									<button class="home_search_button">search</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Intro -->
-
-	<div class="intro">
-		<div class="intro_background" style="background-image:url({% static 'images/intro.png' %})"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="intro_container">
-						<div class="row">
-
-							<!-- Intro Item -->
-							<div class="col-lg-4 intro_col">
-								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
-									<div class="intro_icon"><img src="{% static 'images/beach.svg' %}" alt=""></div>
-									<div class="intro_content">
-										<div class="intro_title">Top Destinations</div>
-										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Intro Item -->
-							<div class="col-lg-4 intro_col">
-								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
-									<div class="intro_icon"><img src="{% static 'images/wallet.svg' %}" alt=""></div>
-									<div class="intro_content">
-										<div class="intro_title">The Best Prices</div>
-										<div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Intro Item -->
-							<div class="col-lg-4 intro_col">
-								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
-									<div class="intro_icon"><img src="{% static 'images/suitcase.svg' %}" alt=""></div>
-									<div class="intro_content">
-										<div class="intro_title">Amazing Services</div>
-										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>		
-			</div>
-		</div>
-	</div>
-
-	<!-- Destinations -->
-
-	<div class="destinations" id="destinations">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_subtitle">simply amazing places</div>
-					<div class="section_title">
-						<h2>Popular Destinations</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row destinations_row">
-				<div class="col">
-					<div class="destinations_container item_grid">
-
-						{% for dest in dests %}
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{{dest.img.url}}" alt="">
-								{% if dest.offer %}
-								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-								{% endif %}
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">{{dest.name}}</a></div>
-								<div class="destination_subtitle">
-									<p>{{dest.desc}}</p>
-								</div>
-								<div class="destination_price">From ${{dest.price}}</div>
-							</div>
-						</div>
-
-						{% endfor %}
+        <div class="w3-row-padding w3-padding-16">
+            <div class="w3-col w3-container" style="width: 20%;">
+                <a href='mobile'>
+                    <div class="w3-display-container"><img src=" static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 30px; ">Mobile Phones</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="w3-col w3-container" style="width: 20%;">
+                <a href='laptop'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Laptops</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-	<!-- Testimonials -->
+            <div class="w3-col w3-container" style="width: 20%;">
+                <a href='books'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Books</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-	<div class="testimonials" id="testimonials">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/testimonials.jpg' %}" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_subtitle">simply amazing places</div>
-					<div class="section_title"><h2>Testimonials</h2></div>
-				</div>
-			</div>
-			<div class="row testimonials_row">
-				<div class="col">
+            <div class="w3-col w3-container" style="width: 20%;">
+                <a href='coolar'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Coolar</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="w3-col w3-container" style="width: 20%;">
+                <a href='electronic'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Electronic Appliances</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-padding-16">
+            <div class="w3-col w3-container" style="width: 20%; ">
+                <a href='stationery'>
+                    <div class=" w3-display-container">
+                        <img src=" static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Stationery</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-					<!-- Testimonials Slider -->
-					<div class="testimonials_slider_container">
-						<div class="owl-carousel owl-theme testimonials_slider">
-							
-							<!-- Slide -->
-							<div class="owl-item text-center">
-								<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.</div>
-								<div class="testimonial_author">
-									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-										<div>john turner,</div>
-										<div>client</div>
-									</div>
-								</div>
-							</div>
+            <div class="w3-col w3-container " style="width: 20%; ">
+                <a href='apron'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Apron</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-							<!-- Slide -->
-							<div class="owl-item text-center">
-								<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.</div>
-								<div class="testimonial_author">
-									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-										<div>john turner,</div>
-										<div>client</div>
-									</div>
-								</div>
-							</div>
+            <div class="w3-col w3-container " style="width: 20%; ">
+                <a href='others'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Others</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-							<!-- Slide -->
-							<div class="owl-item text-center">
-								<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.</div>
-								<div class="testimonial_author">
-									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-										<div>john turner,</div>
-										<div>client</div>
-									</div>
-								</div>
-							</div>
+            <div class="w3-col w3-container " style="width: 20%; ">
+                <a href='vehicle'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">Vehicles</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="test_nav">
-			<ul class="d-flex flex-column align-items-end justify-content-end">
-				<li><a href="#">City Breaks Clients<span>01</span></a></li>
-				<li><a href="#">Cruises Clients<span>02</span></a></li>
-				<li><a href="#">All Inclusive Clients<span>03</span></a></li>
-			</ul>
-		</div>
-	</div>
 
-	<!-- News -->
+            <div class="w3-col w3-container " style="width: 20%; ">
+                <a href='ed'>
+                    <div class="w3-display-container "><img src="static\images\clothsbanner.jpg " class="w3-circle w3-opacity-min w3-hover-opacity-off " alt=" " style="width:200px; height:200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <div class="w3-display-middle w3-container ">
+                            <p style="color: bisque; size: 20px; ">ED Kits</p>
+                        </div>
+                    </div>
+                </a>
 
-	<div class="news" id="news">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-8">
-					<div class="news_container">
-						
-						<!-- News Post -->
-						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-							<div class="news_post_image"><img src="{% static 'images/news_1.jpg' %}" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
-									<div>02</div>
-									<div>june</div>
-								</div>
-								<div class="news_post_title"><a href="#">Best tips to travel light</a></div>
-								<div class="news_post_category">
-									<ul>
-										<li><a href="#">lifestyle & travel</a></li>
-									</ul>
-								</div>
-								<div class="news_post_text">
-									<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet.</p>
-								</div>
-							</div>
-						</div>
+            </div>
+        </div>
+    </div>
+    <!-- Categories ----------------------------------------------------------------------->
 
-						<!-- News Post -->
-						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-							<div class="news_post_image"><img src="{% static 'images/news_2.jpg' %}" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
-									<div>01</div>
-									<div>june</div>
-								</div>
-								<div class="news_post_title"><a href="#">Best tips to travel light</a></div>
-								<div class="news_post_category">
-									<ul>
-										<li><a href="#">lifestyle & travel</a></li>
-									</ul>
-								</div>
-								<div class="news_post_text">
-									<p>Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
-								</div>
-							</div>
-						</div>
 
-						<!-- News Post -->
-						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-							<div class="news_post_image"><img src="{% static 'images/news_3.jpg' %}" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
-									<div>29</div>
-									<div>may</div>
-								</div>
-								<div class="news_post_title"><a href="#">Best tips to travel light</a></div>
-								<div class="news_post_category">
-									<ul>
-										<li><a href="#">lifestyle & travel</a></li>
-									</ul>
-								</div>
-								<div class="news_post_text">
-									<p>Vivamus massa.Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit amet mattis.</p>
-								</div>
-							</div>
-						</div>
+    <!-- Top Products------------------------------------------- -->
+    <div class="top-products">
+        <div class="container">
+            <h3>Top Products</h3>
+            <div class="sap_tabs">
+                <div id="horizontalTab">
+                    {% for dest in dests %}
+                    <div class="col-md-3 top-product-grids tp4">
+                        <a href="single">
+                            <div class="product-img">
+                                <img src="{{dest.image.url}} " alt="" /> {% if user.is_authenticated %}
+                                <div class="p-mask">
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart" />
+                                        <input type="hidden" name="add" value="1" />
+                                        <input type="hidden" name="w3ls1_item" value="{{dest.name}}" />
+                                        <input type="hidden" name="amount" value="{{dest.price}}" />
+                                        <button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                                    </form>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </a>
 
-					</div>
-				</div>
+                        <h4>{{dest.name}}</h4>
+                        <h5>${{dest.price}}</h5>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="w3-display-container w3-center">
+            {% if dests.has_other_pages %}
+            <ul class="pagination">
+                {% if dests.has_previous %}
+                <li><a href="?page={{ dests.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %} {% for i in dests.paginator.page_range %} {% if dests.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span>
+                </li>
+                {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %} {% endfor %} {% if dests.has_next %}
+                <li><a href="?page={{ dests.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
 
-				<!-- News Sidebar -->
-				<div class="col-xl-4">
-					<div class="travello">
-						<div class="background_image" style="background-image:url({% static 'images/travello.jpg' %})"></div>
-						<div class="travello_content">
-							<div class="travello_content_inner">
-								<div></div>
-								<div></div>
-							</div>
-						</div>
-						<div class="travello_container">
-							<a href="#">
-								<div class="d-flex flex-column align-items-center justify-content-end">
-									<span class="travello_title">Get a 20% Discount</span>
-									<span class="travello_subtitle">Buy Your Vacation Online Now</span>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Top Products ------------------------------------------------------------->
 
-	<!-- Footer -->
+    <script src="{% static 'js/easyResponsiveTabs.js' %} " type="text/javascript "></script>
+    <script type="text/javascript ">
+        $(document).ready(function() {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion           
+                width: 'auto', //auto or any width like 600px
+                fit: true // 100% fit in a container
+            });
+        });
+    </script>
+    <div class="fandt ">
+        <div class="container ">
+            <div class="col-md-6 features ">
+                <h3>Our Services</h3>
+                <div class="support ">
+                    <div class="col-md-2 ficon hvr-rectangle-out ">
+                        <i class="fa fa-user " aria-hidden="true "></i>
+                    </div>
+                    <div class="col-md-10 ftext ">
+                        <h4>24/7 online free support</h4>
+                        <p>Praesent rutrum vitae ligula sit amet vehicula. Donec eget libero nec dolor tincidunt vulputate.</p>
+                    </div>
+                    <div class="clearfix "></div>
+                </div>
+                <div class="shipping ">
+                    <div class="col-md-2 ficon hvr-rectangle-out ">
+                        <i class="fa fa-bus " aria-hidden="true "></i>
+                    </div>
+                    <div class="col-md-10 ftext ">
+                        <h4>Free shipping</h4>
+                        <p>Praesent rutrum vitae ligula sit amet vehicula. Donec eget libero nec dolor tincidunt vulputate.</p>
+                    </div>
+                    <div class="clearfix "></div>
+                </div>
+                <div class="money-back ">
+                    <div class="col-md-2 ficon hvr-rectangle-out ">
+                        <i class="fa fa-money " aria-hidden="true "></i>
+                    </div>
+                    <div class="col-md-10 ftext ">
+                        <h4>100% money back</h4>
+                        <p>Praesent rutrum vitae ligula sit amet vehicula. Donec eget libero nec dolor tincidunt vulputate.</p>
+                    </div>
+                    <div class="clearfix "></div>
+                </div>
+            </div>
+            <div class="col-md-6 testimonials ">
+                <div class="test-inner ">
+                    <div class="wmuSlider example1 animated wow slideInUp " data-wow-delay=".5s ">
+                        <div class="wmuSliderWrapper ">
+                            <article style="position: absolute; width: 100%; opacity: 0; ">
+                                <div class="banner-wrap ">
+                                    <img src="{% static 'images/c1.png' %} " alt=" " class="img-responsive " />
+                                    <p>Nam elementum magna id nibh pretium suscipit varius tortor. Phasellus in lorem sed massa consectetur fermentum. Praesent pellentesque sapien euismod.</p>
+                                    <h4># Andrew</h4>
+                                </div>
+                            </article>
+                            <article style="position: absolute; width: 100%; opacity: 0; ">
+                                <div class="banner-wrap ">
+                                    <img src="{% static 'images/c2.png' %} " alt=" " class="img-responsive " />
+                                    <p>Morbi semper, risus dignissim sagittis iaculis, diam est ornare neque, accumsan risus tortor at est. Vivamus auctor quis lacus sed interdum celerisque.</p>
+                                    <h4># Lucy</h4>
+                                </div>
+                            </article>
+                            <article style="position: absolute; width: 100%; opacity: 0; ">
+                                <div class="banner-wrap ">
+                                    <img src="{% static 'images/c3.png' %} " alt=" " class="img-responsive " />
+                                    <p>Fusce non cursus quam, in hendrerit sem. Nam nunc dui, venenatis vitae porta sed, sagittis id nisl. Pellentesque celerisque eget ullamcorper vehicula. </p>
+                                    <h4># Martina</h4>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix "></div>
+        </div>
+        <script src="{% static 'js/jquery.wmuSlider.js' %} "></script>
+        <script>
+            $('.example1').wmuSlider();
+        </script>
+    </div>
+    <!--- footer ---------->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 footer-grids fgd1">
+                <a href="index"><img src="{% static 'images/logo2.png' %}" alt=" " />
+                    <h3>COLLEGE<span>KART</span></h3>
+                </a>
+                <ul>
+                    <li>IIT BHU</li>
+                    <li>India</li>
+                    <li><a href="mailto:info@example.com">director@iitbhu.ac.in</a></li>
+                    <a href="https://twitter.com/IITBHU_Varanasi?s=20"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/iitbhu.varanasi/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Official.IITBHUVaranasi/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/school/iitbhu-varanasi/?originalSubdomain=in"><i class="fa fa-linkedin " aria-hidden="true "></i></a>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids fgd2 ">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="contact ">Contact Us</a></li>
+                    <li><a href="https://iitbhu.campusmall.in/ ">Campus Mall</a></li>
+                    <li><a href="https://iitbhu.ac.in/ ">IIT BHU</a></li>
+                    <li>
+                        <a href="about ">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids fgd3 ">
+                <h4>Buy</h4>
+                <ul>
+                    <li><a href="mobile ">Mobile</a></li>
+                    <li><a href="laptop ">Laptops</a></li>
+                    <li>
+                        <a href="books ">Books</a>
+                    </li>
+                    <li>
+                        <a href="apron ">Apron</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids fgd4 ">
+                <h4>My Account</h4>
+                <ul>
 
-	<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/footer_1.jpg' %}" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="newsletter">
-						<div class="newsletter_title_container text-center">
-							<div class="newsletter_title">Subscribe to our newsletter to get the latest trends & news</div>
-							<div class="newsletter_subtitle">Join our database NOW!</div>
-						</div>
-						<div class="newsletter_form_container">
-							<form action="#" class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between" id="newsletter_form">
-								<div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
-									<div><input type="text" class="newsletter_input newsletter_input_name" id="newsletter_input_name" placeholder="Name" required="required"><div class="input_border"></div></div>
-									<div><input type="email" class="newsletter_input newsletter_input_email" id="newsletter_input_email" placeholder="Your e-mail" required="required"><div class="input_border"></div></div>
-								</div>
-								<div><button class="newsletter_button">subscribe</button></div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row footer_contact_row">
-				<div class="col-xl-10 offset-xl-1">
-					<div class="row">
+                    <li><a href="accounts/login ">Login</a></li>
+                    <li><a href="accounts/register ">Register</a></li>
 
-						<!-- Footer Contact Item -->
-						<div class="col-xl-4 footer_contact_col">
-							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="{% static 'images/sign.svg' %}" alt=""></div>
-								<div class="footer_contact_title">give us a call</div>
-								<div class="footer_contact_list">
-									<ul>
-										<li>Office Landline: +44 5567 32 664 567</li>
-										<li>Mobile: +44 5567 89 3322 332</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+                </ul>
+            </div>
+            <div class="clearfix "></div>
+            <p class="copy-right ">© 2020 College Kart. All rights reserved | Design by Kenny | Niranshi </a>
+            </p>
+        </div>
+    </div>
+    <!-- cart-js -->
+    <script src="{% static 'js/minicart.js' %} "></script>
+    <script>
+        w3ls1.render();
 
-						<!-- Footer Contact Item -->
-						<div class="col-xl-4 footer_contact_col">
-							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="{% static 'images/trekking.svg' %}" alt=""></div>
-								<div class="footer_contact_title">come & drop by</div>
-								<div class="footer_contact_list">
-									<ul style="max-width:190px">
-										<li>4124 Barnes Street, Sanford, FL 32771</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+        w3ls1.cart.on('w3sb1_checkout', function(evt) {
+            var items, len, i;
 
-						<!-- Footer Contact Item -->
-						<div class="col-xl-4 footer_contact_col">
-							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="{% static 'images/around.svg' %}" alt=""></div>
-								<div class="footer_contact_title">send us a message</div>
-								<div class="footer_contact_list">
-									<ul>
-										<li>youremail@gmail.com</li>
-										<li>Office@yourbusinessname.com</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+            if (this.subtotal() > 0) {
+                items = this.items();
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
-	</footer>
-</div>
-
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
-<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
-<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
-<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
-<script src="{% static 'plugins/easing/easing.js' %}"></script>
-<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
-<script src="{% static 'js/custom.js' %}"></script>
+                for (i = 0, len = items.length; i < len; i++) {
+                    items[i].set('shipping', 0);
+                    items[i].set('shipping2', 0);
+                }
+            }
+        });
+    </script>
+    <!-- //cart-js -->
 </body>
+
 </html>

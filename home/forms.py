@@ -1,9 +1,7 @@
-
-from django import forms
-
-
 from product.models import Product
-class sale(forms.ModelForm):
+from django.forms import ModelForm
+
+class sale(ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ['slug', 'created']
