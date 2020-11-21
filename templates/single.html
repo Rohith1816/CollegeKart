@@ -168,24 +168,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="single-page-row" id="detail-21">
                     <div class="col-md-6 single-top-left">
 
-                        <div class="thumb-image detail_images"> <img src="{% static 'images/s1.jpg' %}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                        <div class="thumb-image detail_images"> <img src="{{product.image.url}}" class="img-responsive" alt=""> </div>
 
                     </div>
                     <div class="col-md-6 single-top-right">
-                        <h3 class="item_name"> Product Name </h3>
-                        <p>category </p>
+                        <h3 class="item_name">{{product.name}}</h3>
+                        <p>{{product.category}} </p>
 
-                        <p>Price</p>
-                        <p>Owner</p>
+                        <p>{{product.price}}</p>
+                        <p>{{product.owner}}</p>
                         <p class="single-price-text">
-                            <b>Description </b>Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In
-                            dignissim auctor viverra.
+                            <b>Description </b>{{product.description}}
                         </p>
                         <form action="#" method="post">
                             <input type="hidden" name="cmd" value="_cart" />
                             <input type="hidden" name="add" value="1" />
-                            <input type="hidden" name="w3ls1_item" value="Handbag" />
-                            <input type="hidden" name="amount" value="540.00" />
+                            <input type="hidden" name="w3ls1_item" value="{{product.name}}" />
+                            <input type="hidden" name="amount" value="{{product.price}}" />
                             <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
                         </form>
 
@@ -193,13 +192,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="clearfix"> </div>
                 </div>
             </div>
-
+            <br>
+            <br>
+            <br>
+            <br>
             <!-- Contact user form -->
-            <h1>Contact Seller</h1>
+            <div class="center-block">
+
+                <h1>Contact Seller</h1>
+                <br>
+                <br>
+                <p>For more details and to buy the product contact seller at the given mail id:
+                    <li>
+                        <a href="mailto:{{product.owner.email}}">{{product.owner.email}}</a>
+                        <!-- <b> {{user.email}}</b> -->
+                </p>
+            </div>
             <!-- //contact user form -->
         </div>
     </div>
-
     <div class="footer">
         <div class="container">
             <div class="col-md-3 footer-grids fgd1">
@@ -207,12 +218,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>COLLEGE<span>KART</span></h3>
                 </a>
                 <ul>
-                    <li>1234k Avenue, 4th block,</li>
+                    <li>1234k Avenue, 4th block,
+                    </li>
                     <li>New York City.</li>
-                    <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <li><a href="mailto:info@example.com">info@example.com</a></li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 </ul>
             </div>
@@ -237,7 +246,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-3 footer-grids fgd4">
                 <h4>My Account</h4>
                 <ul>
-
                     <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="recommended.html">Recommended </a></li>
@@ -245,26 +253,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>
             <div class="clearfix"></div>
-            <p class="copy-right">© 2016 Fashion Club . All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
+            <p class="copy-right">© 2016 Fashion Club . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p>
         </div>
     </div>
     <!-- cart-js -->
     <script src="{% static 'js/minicart.js' %}"></script>
     <script>
         w3ls1.render();
-
         w3ls1.cart.on('w3sb1_checkout', function(evt) {
-            var items, len, i;
-
-            if (this.subtotal() > 0) {
-                items = this.items();
-
-                for (i = 0, len = items.length; i < len; i++) {
-                    items[i].set('shipping', 0);
-                    items[i].set('shipping2', 0);
+                var items, len, i;
+                if (this.subtotal() > 0) {
+                    items = this.items();
+                    for (i = 0, len = items.length; i < len; i++) {
+                        items[i].set('shipping', 0);
+                        items[i].set('shipping2', 0);
+                    }
                 }
             }
-        });
+
+        );
     </script>
     <!-- //cart-js -->
 </body>

@@ -14,7 +14,9 @@ urlpatterns=[
     path('others', views.others, name='others'),
     path('stationery', views.stationery, name='stationery'),
     path('vehicle', views.vehicle, name='vehicle'),
-    path('single', views.single, name='single'),
+    path('single/<int:id>/', views.single, name='single'),
+    path( 'about',views.about,name='about'),
+    path( 'contact',views.contact,name='contact'),
     # path('search/',views.search,name='search'),
     # path('vsearch/',views.vsearch,name='vsearch'),
     

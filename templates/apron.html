@@ -164,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div id="horizontalTab">
                     {% for dest in dests %}
                     <div class="col-md-3 top-product-grids tp4">
-                        <a href="single">
+                        <a href="single/{{dest.id}}">
                             <div class="product-img">
                                 <img src="{{dest.image.url}} " alt="" /> {% if user.is_authenticated %}
                                 <div class="p-mask">
@@ -282,7 +282,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         });
     </script>
-    <!-- //cart-js -->
+
 </body>
 
 </html>

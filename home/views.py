@@ -1,13 +1,16 @@
 from django.utils.timezone import datetime
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from product.models import Product
+from .models import Contact
 from .forms import sale
+from .forms import ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.models import User
 
 def index(request):
-    dests_list = Product.objects.all()
+    dests_list = Product.objects.all().order_by('-created')
     page = request.GET.get('page', 1)
-    paginator = Paginator(dests_list, 4)
+    paginator = Paginator(dests_list, 8)
     try:
         dests = paginator.page(page)
     except PageNotAnInteger:
@@ -205,9 +208,44 @@ def vehicle(request):
     return render(request, 'vehicle.html', { 'dests': dests })
 
 
+def single(request, id):
+    product = get_object_or_404(Product,
+                                id=id)
+    return render(request,'single.html',{'product': product}) 
 
-def single(request):
-    return render(request, 'single.html')
+def about(request):
+    return render(request,'about.html')
+
+
+def contact(request):
+    if request.method=='POST':
+        form=ContactForm(request.POST)
+        first_name= request.POST['first_name']
+        last_name= request.POST['last_name']
+        subject= request.POST['subject']
+        username= request.POST['username']
+        message= request.POST['message']
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            subject = form.cleaned_data['subject']
+            username = form.cleaned_data['username']
+            message = form.cleaned_data['message']
+            p = Contact(first_name=first_name, last_name=last_name, subject= subject, username= username, message= message)
+            p.save()
+        else:
+            return redirect('contact')
+    else:
+        form= ContactForm()
+        
+    context={
+        'form':form.as_p()
+    }
+    return render(request,'contact.html',context)
+
+
+# def single(request, id):
+#     return render(request, 'single.html')
 
 # def search(request):
 #     qer=request.GET.get('search')
