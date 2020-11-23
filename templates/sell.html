@@ -1,19 +1,125 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>registration</title>
+    <title>Sell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fashion Club Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- css -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" media="all" />
+    <!--// css -->
+    <!-- font -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- //font -->
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 </head>
 
 <body>
+    <div class="header-top-w3layouts">
+        <div class="container">
+            <div class="col-md-6 logo-w3">
+                <a href="index.html"><img src="{% static 'images/logo2.png' %}" alt=" " />
+                    <h1>COLLEGE<span>KART</span></h1>
+                </a>
+            </div>
+            <div class="col-md-6 phone-w3l">
+                <ul>
+                    <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
+                    <li>+18045403380</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
 
-    <form action="sell" method="POST" enctype="multipart/form-data">
-        {% csrf_token %} {{ form }}
-        <input type='submit' value='add product'>
-    </form>
+    <div class="login">
+
+        <div class="main-agileits">
+            <div class="form-w3agile">
+                <h3>SELL PRODUCT</h3>
+                <form action="sell" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} {{ form }}
+                    <br>
+                    <br>
+                    <input type='submit' value='add product'>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--- footer ---------->
+    <div class="footer ">
+        <div class="container ">
+            <div class="col-md-3 footer-grids fgd1 ">
+                <a href="index "><img src="{% static 'images/logo2.png' %} " alt=" " />
+                    <h3>COLLEGE<span>KART</span></h3>
+                </a>
+                <ul>
+                    <li>IIT BHU</li>
+                    <li>India</li>
+                    <li><a href="mailto:info@example.com ">director@iitbhu.ac.in</a></li>
+                    <a href="https://twitter.com/IITBHU_Varanasi?s=20 "><i class="fa fa-twitter " aria-hidden="true "></i></a>
+                    <a href="https://www.instagram.com/iitbhu.varanasi/ "><i class="fa fa-instagram " aria-hidden="true "></i></a>
+                    <a href="https://www.facebook.com/Official.IITBHUVaranasi/ "><i class="fa fa-facebook " aria-hidden="true "></i></a>
+                    <a href="https://www.linkedin.com/school/iitbhu-varanasi/?originalSubdomain=in "><i class="fa fa-linkedin " aria-hidden="true "></i></a>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids fgd2 ">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="contact ">Contact Us</a></li>
+                    <li><a href="https://iitbhu.campusmall.in/ ">Campus Mall</a></li>
+                    <li><a href="https://iitbhu.ac.in/ ">IIT BHU</a></li>
+                    <li>
+                        <a href="about ">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids fgd3 ">
+                <h4>Buy</h4>
+                <ul>
+                    <li><a href="mobile ">Mobile</a></li>
+                    <li><a href="laptop ">Laptops</a></li>
+                    <li>
+                        <a href="books ">Books</a>
+                    </li>
+                    <li>
+                        <a href="apron ">Apron</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids fgd4 ">
+                <h4>My Account</h4>
+                <ul>
+
+                    <li><a href="accounts/login ">Login</a></li>
+                    <li><a href="accounts/register ">Register</a></li>
+
+                </ul>
+            </div>
+            <div class="clearfix "></div>
+            <p class="copy-right ">© 2020 College Kart. All rights reserved | Design by Kenny | Niranshi </a>
+            </p>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

@@ -270,31 +270,31 @@ button.w3view-cart:focus {
 /*--banner--*/
 
 .banner-agile {
-    background: url(../images/banner2.jpg) no-repeat 0px 0px;
+    background: url(static\images\mobilebanner.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 580px;
 }
 
 .sub-banner {
-    background: url(../images/banner2.jpg) no-repeat 0px 0px;
+    background: url(static\images\mobilebanner.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 280px;
 }
 
 .my-banner2 {
-    background: url(../images/clothsbanner.jpg) no-repeat 0px 0px;
+    background: url(static\images\mobilebanner.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 480px;
 }
 
 .my-banner3 {
-    background: url(../images/menbanner.jpg) no-repeat 0px 0px;
+    background: url(static\images\mobilebanner.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 480px;
 }
 
 .my-banner4 {
-    background: url(../images/jewelbg.jpg) no-repeat 0px 0px;
+    background: url(static\images\mobilebanner.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 480px;
 }
@@ -3860,7 +3860,7 @@ p.w3-agile {
         width: 81%;
     }
     .banner-agile {
-        background: url(../images/banner2.jpg) no-repeat -50px 0px;
+        background: url(../images/mobilebanner.jpg) no-repeat -50px 0px;
         background-size: cover;
     }
 }
