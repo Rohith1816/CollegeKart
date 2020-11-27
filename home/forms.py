@@ -10,4 +10,4 @@ class sale(ModelForm):
 class ContactForm(ModelForm):
     class Meta:
         model = Contact
-        fields = '__all__'
+        exclude = ['slug']

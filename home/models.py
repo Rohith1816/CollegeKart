@@ -12,9 +12,9 @@ class Contact(models.Model):
     slug = models.SlugField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        if not self.slug and self.name:
-            self.slug = slugify(self.name)
+        if not self.slug and self.username:
+            self.slug = slugify(self.username)
         super(Contact, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.username
+        return str(self.username)

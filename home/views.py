@@ -5,7 +5,9 @@ from .models import Contact
 from .forms import sale
 from .forms import ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
+
 
 def index(request):
     dests_list = Product.objects.all().order_by('-created')
@@ -225,16 +227,25 @@ def contact(request):
         subject= request.POST['subject']
         username= request.POST['username']
         message= request.POST['message']
-        if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            subject = form.cleaned_data['subject']
-            username = form.cleaned_data['username']
-            message = form.cleaned_data['message']
-            p = Contact(first_name=first_name, last_name=last_name, subject= subject, username= username, message= message)
-            p.save()
+
+        user = auth.authenticate(username=username)
+        if User.objects.filter(username=username).exists():
+            if form.is_valid():
+                first_name = form.cleaned_data['first_name']
+                last_name = form.cleaned_data['last_name']
+                subject = form.cleaned_data['subject']
+                username = form.cleaned_data['username']
+                message = form.cleaned_data['message']
+                p = Contact(first_name=first_name, last_name=last_name, subject= subject, username= username, message= message)
+                p.save()
+                
+            else:
+                messages.info(request,'Message Sent')
+                return redirect('home:contact')
         else:
-            return redirect('contact')
+            messages.info(request, 'Incorrect Username')
+            return redirect('home:contact')
+
     else:
         form= ContactForm()
         
@@ -244,17 +255,7 @@ def contact(request):
     return render(request,'contact.html',context)
 
 
-# def single(request, id):
-#     return render(request, 'single.html')
-
 # def search(request):
 #     qer=request.GET.get('search')
 #     desti=Product.objects.filter(name__contains =qer )
 #     return render(request,'search.html',{'desti':desti})
-# def vsearch(request):
-#     qer=request.GET.get('vsearch')
-#     desti=[ item for item in Product.objects.all() if  item.price == 344 and qer in item.name.lower() ]
-#     return render(request,'search.html',{'desti':desti})
-# def vehicle(request):
-#     dests=[item for item in Product.objects.all() if item.price == 344]
-#     return render(request,'vehicles.html',{'dests':dests})
