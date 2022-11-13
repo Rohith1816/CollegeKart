@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'collegekart',
-        'USER': 'CollegeKart',
-        'PASSWORD': 'CollegeKart%123',
+        'USER': 'root',
+        'PASSWORD': 'Rohith@2004',
         'HOST': '127.0.0.1',                   
         'PORT': '3306',  
     }
